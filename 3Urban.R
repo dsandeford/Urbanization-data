@@ -2,8 +2,8 @@ library(latex2exp)
 library(ggplot2)
 library(patchwork)
 
-setwd("/home/david/work/Supplementary Information (Urbanization)")
-load("/home/david/work/Supplementary Information (Urbanization)/TableData.Rdata") 
+setwd("/")
+load("/TableData.Rdata") 
 
 urbanData = AggrDat
 urbanData = subset(AggrDat, select = -c(uniq, Dupl))
@@ -13,7 +13,7 @@ urbanData = subset(AggrDat, select = -c(uniq, Dupl))
 ## Analyze data.
 
 # Population-area relationship
-areaData <- read.csv("/home/david/work/Supplementary Information (Urbanization)/Supplementary Information 1.csv")
+areaData <- read.csv("/Supplementary Information 1.csv")
 summary(lm(areaData$log.A ~ areaData$log.N))
 
 
@@ -36,9 +36,9 @@ summary(lm(log10(Agri)+Cap~Cap, data=urbanData[which(urbanData$Agri > 0),]))
 
 
 # Scaling of infrastructural length with energy consumption in contemporary societies
-large_scale_infra1 <- read.csv("/home/david/work/Supplementary Information (Urbanization)/Roadways-Energy.csv")
+large_scale_infra1 <- read.csv("/Roadways-Energy.csv")
 summary(lm(Energy~Infra, data=large_scale_infra1))
-large_scale_infra2 <- read.csv("/home/david/work/Supplementary Information (Urbanization)/Railways-Energy.csv")
+large_scale_infra2 <- read.csv("/Railways-Energy.csv")
 summary(lm(log_total_E~log_rail_lines_km, data=large_scale_infra2))
 
 
