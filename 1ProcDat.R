@@ -1,7 +1,7 @@
 ### ProcDat processes data from a Seshat Wiki scrape file.csv into the table form (TSDat)
 ### ***NUMERIC VERSION*** Averages ranges, uncertainty, and disagreements
 ####    Run 0UpdatePolsVars.R to update PolsVar.Rdata
-setwd("/home/david/work/Supplementary Information (Urbanization)")
+setwd("/")
 
 { ### 1. Construct CanonDat.csv
   ### Define the set of variables to process
