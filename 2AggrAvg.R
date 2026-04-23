@@ -1,7 +1,7 @@
 ############   2AggrAvg.R aggregates TSDat into AggrDat, uses averages.
 ###                     takes TSDat123.csv from 1ProcDat.R as input
 #
-setwd("/home/david/work/Supplementary Information (Urbanization)")
+setwd("/")
 
 {############################## Get data ###############################################
   load("PolsVars.Rdata")
