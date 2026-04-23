@@ -8,3 +8,7 @@ this model as a system of interrelated scaling relationships that measure these 
 of the general properties of human social networks and the energetic constraints on all social systems embedded in space. 
 The model predicts that the population size of a polity's largest settlement scales as the two-thirds power of polity 
 population, a prediction that is confirmed in hundreds of ancient societies from across the globe, spanning the last 10,000 years.
+
+
+
+To replicate the results of this study download all files and run the R scripts in numerical order.
