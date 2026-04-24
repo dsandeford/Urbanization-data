@@ -37,7 +37,7 @@ summary(lm(log10(Agri)+Cap~Cap, data=urbanData[which(urbanData$Agri > 0),]))
 
 # Scaling of infrastructural length with energy consumption in contemporary societies
 large_scale_infra1 <- read.csv("/Roadways-Energy.csv")
-summary(lm(Energy~Infra, data=large_scale_infra1))
+summary(lm(log10(TFC_PJ_IEA)~log10(Total_km), data=large_scale_infra[which(large_scale_infra$Country!='Singapore'),]))
 large_scale_infra2 <- read.csv("/Railways-Energy.csv")
 summary(lm(log_total_E~log_rail_lines_km, data=large_scale_infra2))
 
