@@ -77,12 +77,12 @@ fig1 = ggplot(data=areaData, aes(x = log.N, y = log.A)) +
 
 # Figure 2
 
-fit2 <- lm(Energy ~ Cap, data = urbanData)
+fit2 <- lm(Y ~ Cap, data = urbanData)
 slope2 <- round(coef(fit2)[2], 2)
 intercept2 <- round(coef(fit2)[1], 2)
 r22 <- round(summary(fit2)$adj.r.squared, 2)
 
-fig2 = ggplot(data=urbanData, aes(x = Cap, y = Energy)) +  
+fig2 = ggplot(data=urbanData, aes(x = Cap, y = Y)) +  
   geom_point(color='grey', alpha=0.5) +
   geom_smooth(formula = y~x, method='lm', se=FALSE, color = adjustcolor('navy', alpha.f = 0.5)) +
   annotate("text", x = 4, y = 6.5, hjust = 0.5,
@@ -92,7 +92,7 @@ fig2 = ggplot(data=urbanData, aes(x = Cap, y = Energy)) +
   scale_x_continuous(breaks = scales::pretty_breaks(n = 6)) +
   scale_y_continuous(breaks = scales::pretty_breaks(n = 6)) + 
   xlab(TeX("log Population size of the largest settlement, $N$")) +
-  ylab(TeX("log $Y$ (GJ/y)")) +
+  ylab(TeX("log $Y$ (tons/y)")) +
   theme_minimal()
 
 
