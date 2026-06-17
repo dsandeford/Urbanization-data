@@ -25,10 +25,10 @@ summary(lm(Rural-log10(SL-1)~Cap, data=urbanData[which(urbanData$SL>1),]))
 
 
 # Scaling of socioeconomic output Y with N
-urbanData$Energy = log10(urbanData$Agri * 15 * 100) 
-urbanData[which(urbanData$Energy=='-Inf'),]$Energy = NA
-urbanData[which(urbanData$Energy!='NA'),]$Energy = urbanData[which(urbanData$Energy!='NA'),]$Energy + urbanData[which(urbanData$Energy!='NA'),]$Terr
-summary(lm(Energy~Cap, data=urbanData))
+urbanData$Y = log10(urbanData$Agri * 100) 
+urbanData[which(urbanData$Y=='-Inf'),]$Y = NA
+urbanData[which(urbanData$Y!='NA'),]$Y = urbanData[which(urbanData$Y!='NA'),]$Y + urbanData[which(urbanData$Y!='NA'),]$Terr
+summary(lm(Y~Cap, data=urbanData))
 
 
 # Scaling of c_1NI with N, where c_1 = 1.
@@ -37,7 +37,7 @@ summary(lm(log10(Agri)+Cap~Cap, data=urbanData[which(urbanData$Agri > 0),]))
 
 # Scaling of infrastructural length with energy consumption in contemporary societies
 large_scale_infra1 <- read.csv("/Roadways-Energy.csv")
-summary(lm(log10(TFC_PJ_IEA)~log10(Total_km), data=large_scale_infra[which(large_scale_infra$Country!='Singapore'),]))
+summary(lm(log10(TFC_PJ_IEA)~log10(Total_km), data=large_scale_infra1[which(large_scale_infra1$Country!='Singapore'),]))
 large_scale_infra2 <- read.csv("/Railways-Energy.csv")
 summary(lm(log_total_E~log_rail_lines_km, data=large_scale_infra2))
 
